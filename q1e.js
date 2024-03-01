@@ -53044,4 +53044,25 @@ let countries=[
     }
     ];
 
+    let currency=countries.map((values)=>{
     
+    return values.currencies;
+});
+
+let currencyKeys=[];
+
+for(i=0;i<currency.length;i++){
+    if(currency[i]!=null&&currency[i]!='undefine'){
+    currencyKeys[i]=Object.keys(currency[i]);
+}
+}
+var usdollar=[];
+var iter=0;
+for(i=0; i<currency.length;i++){
+    var a1=currencyKeys[i];
+     if(currency[i].a1.symbol=="$"){
+        usdollar[iter]=currency[i];
+        iter++;
+    }
+}
+console.log(usdollar);
